@@ -3,6 +3,7 @@
 const Promise = require('bluebird');
 
 let hello = new Promise((resolve, reject) => {
+
 	resolve("Hello, it's me!"); 
 });
 
@@ -16,5 +17,5 @@ hello
 		}
 	})
 	.catch((error) => {
-		console.log(error);
+		console.log(error.message);
 	});
