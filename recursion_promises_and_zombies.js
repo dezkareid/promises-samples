@@ -20,11 +20,11 @@ const isAuthorized = (entityId, resourceId ) => {
 		setTimeout(() => {
 			var resource = resources[resourceId];
 			var entity = entities[entityId];
-			if ( entity.key === resource.authkey){
+			if (entity.key === resource.authkey){
 				resolve(true);
 			} else {
-				if ( entity.parent ) {
-					resolve( isAuthorized(entity.parent, resourceId));
+				if (entity.parent ) {
+					resolve(isAuthorized(entity.parent, resourceId));
 				} else {
 					resolve(false);
 				}
@@ -52,4 +52,4 @@ isAuthorized('3', '1' )
 	})
 	.then((authorized) => {
 		console.log('User has permissions to resource D : ' + authorized); //Must be false
-	});;
+	});
